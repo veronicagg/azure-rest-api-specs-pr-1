@@ -3,7 +3,7 @@
   "info": {
     "title": "BatchAI",
     "description": "The Azure BatchAI Management API.",
-    "version": "2018-05-01",
+    "version": "2019-01-01",
     "x-ms-code-generation-settings": {
       "name": "BatchAIManagementClient"
     }
