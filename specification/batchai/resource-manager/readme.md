@@ -5,7 +5,9 @@
 This is the AutoRest configuration file for Batch AI SDK.
 
 ---
+
 ## Getting Started
+
 To build the SDK for Batch AI, simply [Install AutoRest](https://aka.ms/autorest/install) and in this folder, run:
 
 > `autorest`
@@ -13,21 +15,29 @@ To build the SDK for Batch AI, simply [Install AutoRest](https://aka.ms/autorest
 To see additional help and options, run:
 
 > `autorest --help`
+
 ---
 
 ## Configuration
 
-
-
 ### Basic Information
+
 These are the global settings for the Batch AI.
 
 ``` yaml
 openapi-type: arm
-tag: package-2018-05
+tag: package-preview-2019-01
 ```
 
 
+### Tag: package-preview-2019-01
+
+These settings apply only when `--tag=package-preview-2019-01` is specified on the command line.
+
+```yaml $(tag) == 'package-preview-2019-01'
+input-file:
+  - Microsoft.BatchAI/preview/2019-01-01/BatchAI.json
+```
 ### Tag: package-2017-09-preview
 
 These settings apply only when `--tag=package-2017-09-preview` is specified on the command line.
@@ -56,8 +66,8 @@ input-file:
 ```
 
 ---
-# Code Generation
 
+# Code Generation
 
 ## Swagger to SDK
 
@@ -72,7 +82,6 @@ swagger-to-sdk:
   - repo: azure-sdk-for-js
   - repo: azure-sdk-for-node
 ```
-
 
 ## CSharp Settings
 
@@ -105,11 +114,13 @@ python:
   package-name: azure-mgmt-batchai
   clear-output-folder: true
 ```
+
 ``` yaml $(python) && $(python-mode) == 'update'
 python:
   no-namespace-folders: true
   output-folder: $(python-sdks-folder)/azure-mgmt-batchai/azure/mgmt/batchai
 ```
+
 ``` yaml $(python) && $(python-mode) == 'create'
 python:
   basic-setup-py: true
